@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&display=swap");
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 22px;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    color: #563d7c;
+  }
+}
+
+@import "./app/about-me/about-me.component.scss";

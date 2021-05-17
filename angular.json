@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "pkanvi"
+  "defaultProject": "pkanvi",
+  "cli": {
+    "analytics": "10a07330-6503-48d4-a3ef-40cce107e526"
+  }
 }
