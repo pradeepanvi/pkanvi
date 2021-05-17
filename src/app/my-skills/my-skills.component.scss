@@ -1,0 +1,160 @@
+.my_skills {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @include media-breakpoint-up(lg) {
+    min-height: 100vh;
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+  ul {
+    margin-left: -20px;
+    margin-right: -20px;
+    width: auto;
+    @include media-breakpoint-down(md) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    li {
+      display: inline-block;
+      padding: 0 20px;
+      margin-bottom: 30px;
+      @include media-breakpoint-down(md) {
+        flex: 0 0 50%;
+        max-width: 50%;
+        text-align: center;
+        & > div {
+          display: inline-block;
+        }
+      }
+      .img_area {
+        margin-bottom: 10px;
+        img {
+          width: 100px;
+          transition: 0.5s all;
+          transform: rotate(30deg);
+        }
+      }
+      .txt_area {
+        text-align: center;
+        position: relative;
+        background-color: #333333;
+        border-radius: 3px;
+        span {
+          border-radius: 3px;
+          transition: 0.5s all;
+          display: block;
+          color: #ffffff;
+          &:first-child {
+            position: relative;
+            z-index: 1;
+            padding: 0 8px;
+          }
+          & + span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #333333;
+            padding-right: 5px;
+            padding-left: 10px;
+          }
+        }
+      }
+      &:hover {
+        .img_area {
+          img {
+            transform: rotate(0deg);
+          }
+        }
+        .txt_area {
+          span {
+            & + span {
+              right: -30px;
+            }
+          }
+        }
+      }
+      .angular {
+        .txt_area {
+          span {
+            &:first-child {
+              background-color: #dd0330;
+            }
+          }
+        }
+      }
+      .html {
+        .txt_area {
+          span {
+            &:first-child {
+              background-color: #f16529;
+            }
+          }
+        }
+      }
+      .css {
+        .txt_area {
+          span {
+            &:first-child {
+              background-color: #008fd5;
+            }
+          }
+        }
+      }
+      .bootstrap {
+        .txt_area {
+          span {
+            &:first-child {
+              background-color: #563d7c;
+            }
+          }
+        }
+      }
+      .less {
+        .txt_area {
+          span {
+            &:first-child {
+              background-color: #1e416f;
+            }
+          }
+        }
+      }
+      .sass {
+        .txt_area {
+          span {
+            &:first-child {
+              background-color: #cf649a;
+            }
+          }
+        }
+      }
+      .js {
+        .txt_area {
+          span {
+            &:first-child {
+              background-color: #f99d34;
+            }
+          }
+        }
+      }
+      .jquery {
+        .txt_area {
+          span {
+            &:first-child {
+              background-color: #0868ab;
+            }
+          }
+        }
+      }
+      .wordpress {
+        .txt_area {
+          span {
+            &:first-child {
+              background-color: #218dbe;
+            }
+          }
+        }
+      }
+    }
+  }
+}
