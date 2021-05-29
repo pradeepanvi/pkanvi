@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Project } from '../shared/project.model';
 import { Role } from '../shared/role.model';
 import { Technology } from '../shared/technology.model';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-my-projects',
@@ -10,8 +11,9 @@ import { Technology } from '../shared/technology.model';
 export class MyProjectsComponent implements OnInit {
   projects: Project[];
   term: any = '';
+  modalRef: BsModalRef;
 
-  constructor() { }
+  constructor(private modalService: BsModalService) { }
 
   ngOnInit(): void {
     this.initProjects();
@@ -22,29 +24,12 @@ export class MyProjectsComponent implements OnInit {
     this.term = t
   }
 
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, { class: 'modal-lg' });
+  }
+
   private initProjects() {
     this.projects = [
-      new Project(
-        "Pradeep Kumar",
-        "http://pkanvi.com/images/pkanvi.jpg",
-        "pkanvi",
-        "http://pkanvi.com",
-        "This is a type Portfolio made in HTML and after that I convert into Angular2. My work was HTML with Less and Angular2.",
-        "LTR",
-        [
-          new Role("Angular2 Single Page Aplication."),
-          new Role("LTR site."),
-          new Role("Made in my custom HTML, CSS and Angular2."),
-          new Role("Google page speed."),
-          new Role("Responsible for cross browser template development using HTML and CSS.")
-        ],
-        [
-          new Technology("icon-angular2", "Angular2"),
-          new Technology("icon-html5", "HTML5"),
-          new Technology("icon-css3", "CSS3")
-        ]
-      ),
-      new Project("Pradeep Kumar", "http://pkanvi.com/images/pkanvi.jpg", "pkanvi", "http://pkanvi.com/old", "This is a type Portfolio made in HTML. My work was HTML with Less.", "LTR", [new Role("Made in my custom HTML, Less CSS and jQuery."), new Role("LTR site."), new Role("Google page speed."), new Role("SEO Friendly HTML and Follow W3C standards."), new Role("Responsible for cross browser template development using HTML and CSS.")], [new Technology("icon-html5", "HTML5"), new Technology("icon-css3", "CSS3"), new Technology("icon-jquery", "jQuery")]),
       new Project("Achva", "http://pkanvi.com/images/achva.jpg", "satc", "http://new.achva.ac.il/", "A Online Study sites for students.", "RTL", [new Role("Convert PSD to HTML"), new Role("RTL site."), new Role("Google page speed."), new Role("SEO Friendly HTML and Follow W3C standards."), new Role("Responsible for cross browser template development using HTML and CSS.")], [new Technology("icon-html5", "HTML5"), new Technology("icon-css3", "CSS3"), new Technology("icon-jquery", "jQuery")]),
       new Project("Matam", "http://pkanvi.com/images/matam.jpg", "satc", "http://matam.manta-web.com/html/", "AEW Park is a high-tech park and Israel's leading businesses. Matam company is jointly owned by Bayside (50.1%) Property and Building Group IDB, which manages the park and other parks with high-tech in Israel, Haifa Economic Corporation (49.9%), owned by the Municipality of Haifa.", "LTR", [new Role("Made in my custom HTML, Less CSS and jQuery."), new Role("RTL site and LTR as well. So I wrote both CSS"), new Role("Google page speed."), new Role("SEO Friendly HTML and Follow W3C standards."), new Role("Responsible for cross browser template development using HTML and CSS.")], [new Technology("icon-html5", "HTML5"), new Technology("icon-css3", "CSS3"), new Technology("icon-jquery", "jQuery")]),
       new Project("Shuk", "http://pkanvi.com/images/shuk.jpg", "satc", "http://shuk.manta-web.com/", "Market port is for us a dream come true: a place adjacent to the water's edge with a beautiful view and sunset Sea, 'Luna Park' gastronomic ecological building (which is also building the first commercial of its kind in the country) complements the shopping experience at the farmers market is open six days a week, Monday to Saturday.", "RTL/LTR", [new Role("Made in my custom HTML, Less CSS and jQuery."), new Role("RTL site and LTR as well. So I wrote both CSS"), new Role("Google page speed."), new Role("SEO Friendly HTML and Follow W3C standards."), new Role("Responsible for cross browser template development using HTML and CSS.")], [new Technology("icon-html5", "HTML5"), new Technology("icon-css3", "CSS3"), new Technology("icon-jquery", "jQuery")]),

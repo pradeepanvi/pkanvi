@@ -66,3 +66,86 @@
     }
   }
 }
+
+body.modal-open{
+  overflow: hidden;
+}
+.modal-dialog{
+  .btn_none{
+    border: none;
+    background: transparent;
+    margin-left: 10px;
+    padding: 10px;
+    color: inherit;
+    i{
+      font-style: normal;
+    }    
+  }
+  .modal-body{
+    font-size: 16px;
+    ul{
+      margin-bottom: 20px;
+      li{
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 25px;
+        i.bi{
+          position: absolute;
+          left: 0;
+          color: #563d7c;
+        }
+      }
+    }
+    [class^=icon-] {
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+    text-indent: 70px;
+    overflow: hidden;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    &.icon-html5 {
+        background-image: url('http://pkanvi.com/images/html5.svg')
+    }
+    
+    &.icon-css3 {
+        background-image: url('http://pkanvi.com/images/css3.svg')
+    }
+    
+    &.icon-bootstrap {
+        background-image: url('http://pkanvi.com/images/bootstrap.svg')
+    }
+    
+    &.icon-less {
+        background-image: url('http://pkanvi.com/images/less.svg')
+    }
+    
+    &.icon-sass {
+        background-image: url('http://pkanvi.com/images/sass.svg')
+    }
+    
+    &.icon-angular2 {
+        background-image: url('http://pkanvi.com/images/angular2.svg')
+    }
+    
+    &.icon-js {
+        background-image: url('http://pkanvi.com/images/javascript.svg')
+    }
+    
+    &.icon-jquery {
+        background-image: url('http://pkanvi.com/images/jquery.svg')
+    }
+    
+    &.icon-wordpress {
+        background-image: url('http://pkanvi.com/images/wordpress.svg')
+    }
+    }
+
+    a{
+      color: #563d7c;
+    }
+  }
+}

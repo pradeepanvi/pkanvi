@@ -35,7 +35,7 @@ class="btn btn-secondary"
     </button>
   </div>
   <ul>
-    <li *ngFor="let project of projects | projectFilter: term">
+    <li *ngFor="let project of projects | projectFilter: term; let i=index">
       <aside>
         <section>
           <img [src]="project.imgURL" />
@@ -49,13 +49,39 @@ class="btn btn-secondary"
                 [href]="project.link"
                 ><i class="bi bi-globe"></i
               ></a>
-              <button class="btn_none">
+              <button class="btn_none" (click)="openModal(modalData)">
                 <i class="bi bi-info-circle"></i>
               </button>
             </div>
           </div>
         </div>
       </aside>
+<ng-template #modalData>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{ project.name }}</h4>
+    <button type="button" class="btn_none pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <i class="close_icon">X</i>
+    </button>
+  </div>
+  <div class="modal-body">
+<div class="txt_area">
+<h4>Description</h4>
+<p>{{ project.description }}</p>
+<h4>Site Type</h4>
+<p>{{ project.layout }}</p>
+<h4>Company Name</h4>
+<p class="txt-uppercase">{{ project.company }}</p>
+<h4>Roles &amp; Responsibilities</h4>
+<ul>
+  <li *ngFor="let role of project.roles"><i class="bi bi-arrow-right-square-fill"></i> {{role.name}}</li>
+</ul>
+<h4>Technologies</h4>
+<i *ngFor="let tech of project.technologies" class="{{tech.icon}}">{{tech.name}}</i>
+<h5>Site URL</h5>
+<a target="_blank" [href]="project.link">{{project.link}}</a>
+</div>
+</div>
+</ng-template>
     </li>
   </ul>
 </div>
