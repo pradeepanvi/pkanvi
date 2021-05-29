@@ -1,9 +1,6 @@
 .my_skills {
   padding-top: 50px;
   padding-bottom: 50px;
-  @include media-breakpoint-up(lg) {
-    min-height: 100vh;
-  }
   h2 {
     margin-bottom: 20px;
   }

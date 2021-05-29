@@ -1,0 +1,61 @@
+<div class="container my_projects">
+  <h2>My Projects</h2>
+  <div class="btn-group mb-4" role="group" aria-label="Second group">
+    <button
+      type="button"
+      class="btn btn-secondary"
+      [ngClass]="{ 'active' : term === ''}"
+      (click)="showProject('')"
+      >
+      All
+    </button>
+    <button
+    type="button"
+    class="btn btn-secondary"
+    [ngClass]="{ 'active' : term === 'satc'}"
+    (click)="showProject('satc')"
+    >
+    SATC
+  </button>
+  <button
+  type="button"
+  class="btn btn-secondary"
+  [ngClass]="{ 'active' : term === 'eci'}"
+  (click)="showProject('eci')"
+  >
+  ECI
+</button>
+<button
+type="button"
+class="btn btn-secondary"
+[ngClass]="{ 'active' : term === 'excel'}"
+      (click)="showProject('excel')"
+    >
+      Excel
+    </button>
+  </div>
+  <ul>
+    <li *ngFor="let project of projects | projectFilter: term">
+      <aside>
+        <section>
+          <img [src]="project.imgURL" />
+        </section>
+        <div class="table_t">
+          <div class="cell_row">
+            <div class="cell_t">
+              {{ project.name }}<br /><a
+                target="_blank"
+                title="visit site"
+                [href]="project.link"
+                ><i class="bi bi-globe"></i
+              ></a>
+              <button class="btn_none">
+                <i class="bi bi-info-circle"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </li>
+  </ul>
+</div>

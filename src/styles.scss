@@ -2,6 +2,9 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&display=swap");
+html{
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Raleway", sans-serif;
   font-size: 18px;
@@ -21,3 +24,4 @@ a {
 
 @import "./app/about-me/about-me.component.scss";
 @import "./app/my-skills/my-skills.component.scss";
+@import "./app/my-projects/my-projects.component.scss";
