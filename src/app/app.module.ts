@@ -10,6 +10,7 @@ import { CustomProjectFilterPipe } from './shared/project-filter.pipe';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { TotalYearsOfExperiencePipe } from './shared/years-of-experience.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { environment } from '../environments/environment';
     AboutMeComponent,
     MySkillsComponent,
     MyProjectsComponent,
-    CustomProjectFilterPipe
+    CustomProjectFilterPipe,
+    TotalYearsOfExperiencePipe
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,7 @@ import { environment } from '../environments/environment';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [TotalYearsOfExperiencePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
