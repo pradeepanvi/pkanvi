@@ -4,7 +4,8 @@
   margin: 0;
   @include media-breakpoint-up(lg) {
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding-top: 100px;
   }
   @include media-breakpoint-down(xl) {
     background-size: 320px;
@@ -24,6 +25,31 @@
   }
   p + h4 {
     margin-top: 30px;
+  }
+  .experience{
+    margin-bottom: 20px;
+    li{
+      padding-left: 20px;
+      margin-bottom: 5px;
+      position: relative;
+      &:before{
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: #212529;
+        position: absolute;
+        display: block;
+        left: 0;
+        top: calc(50% - 5px);
+        transition: 0.5s all;
+       transform: rotate(45deg); 
+      }
+      &:hover{
+        &:before{
+          transform: rotate(0);
+        }
+      }
+    }
   }
   .social_links {
     margin-bottom: 20px;
