@@ -22,7 +22,7 @@ import { TotalYearsOfExperiencePipe } from './shared/years-of-experience.pipe';
     TotalYearsOfExperiencePipe
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     ModalModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {

@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pkanvi",
+            "outputPath": "dist/pkanvi/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -124,6 +124,62 @@
               "devServerTarget": "pkanvi:serve:production"
             }
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/pkanvi/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "pkanvi:build:development",
+              "serverTarget": "pkanvi:server:development"
+            },
+            "production": {
+              "browserTarget": "pkanvi:build:production",
+              "serverTarget": "pkanvi:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "pkanvi:build:production",
+              "serverTarget": "pkanvi:server:production"
+            },
+            "development": {
+              "browserTarget": "pkanvi:build:development",
+              "serverTarget": "pkanvi:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
